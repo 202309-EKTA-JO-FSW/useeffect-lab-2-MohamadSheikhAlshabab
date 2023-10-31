@@ -1,13 +1,14 @@
-export default function UserCard() {
+export default function UserCard({data}) {
+  
   return (
     <div className="user-card">
       <div>
-        <img alt="avatar" />
+        <img style={{margin:'2rem'}} src={data.avatar_url} alt="avatar" />
       </div>
       <div>
-        <h5> Name:</h5>
+        <h5> Name: <a href={data.html_url}>{data.name}</a></h5>
 
-        <p> Username: </p>
+        <p> Username: <a href={data.html_url}>{data.login}</a></p>
       </div>
     </div>
   );
